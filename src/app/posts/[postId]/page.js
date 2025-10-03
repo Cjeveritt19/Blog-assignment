@@ -1,17 +1,24 @@
 //TODO: get the individual post data from the database
 //TODO: implement a delete action to delete comments
+import { db } from "@/utlls/dbConnection";
+import Image from "next/image";
 
-export default function PostIdPage() {
-  //when you are collecting the comment form data, the user does not give you the foreign key value
-  //when you insert the form data into the table, YOU have to also insert the foreign key value
-  // the foreign key value references the id in the other table --> this is how you know what value to insert
+export default async function PostIdPage({ params }) {
+  const postId = (await params).postId;
+
+  const query = await db.query(
+    `select id, title, content, author, url from posts where id =  ${postId}`
+  );
+  const post = query.rows[0];
+
+  console.log(post);
   return (
     <div>
-      Individual post page
-      {/* TODO: render the individual post data */}
-      {/* TODO: set up a form for the user to leave a comment (you can use a component Form or you could write the <form></form> directly on this page) */}
-      {/* TODO: render the list of comments */}
-      {/* TODO: add a delete button per comment (can be a component, if you want)*/}
+      <h1>Individual Post Page</h1>
+      <h2>{post.title}</h2>
+      <p>{post.content}</p>
+      <p>Author: {post.author}</p>
+      <Image src={post?.url} alt={post.title} width={500} height={300} />
     </div>
   );
 }
