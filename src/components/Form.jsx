@@ -8,11 +8,11 @@ export default function CommentForm() {
       content: formData.get("comment"),
     };
     console.log(formValues);
-
-    db.query(`insert into comments (commenter, content) values ($1, $2)`, [
-      formValues.commenter,
-      formValues.content,
-    ]);
+    db.query(
+      `insert into comments (commenter, content)
+       values ($1, $2)`,
+      [formValues.commenter, formValues.content]
+    );
   }
 
   return (
