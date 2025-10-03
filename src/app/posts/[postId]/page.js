@@ -7,18 +7,22 @@ export default async function PostIdPage({ params }) {
   const postId = (await params).postId;
 
   const query = await db.query(
-    `select id, title, content, author, url from posts where id =  ${postId}`
+    `select id, title, content, author, url from posts where id = ${postId}`
   );
+  console.log(query);
+
   const post = query.rows[0];
 
-  console.log(post);
+  // console.log(post);
   return (
-    <div>
-      <h1>Individual Post Page</h1>
-      <h2>{post.title}</h2>
-      <p>{post.content}</p>
-      <p>Author: {post.author}</p>
-      <Image src={post?.url} alt={post.title} width={500} height={300} />
-    </div>
+    <>
+      <div>
+        <h1>Individual Post Page</h1>
+        <h2>{post.title}</h2>
+        <p>{post.content}</p>
+        <p>Author: {post.author}</p>
+        <Image src={post?.url} alt={post.title} width={500} height={300} />
+      </div>
+    </>
   );
 }

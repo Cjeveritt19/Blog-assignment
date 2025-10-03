@@ -1,6 +1,6 @@
 import { db } from "@/utlls/dbConnection";
-import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default function NewPostPage() {
   async function handleSubmit(formData) {
@@ -19,7 +19,7 @@ export default function NewPostPage() {
 
     revalidatePath("/posts");
 
-    redirect("posts");
+    redirect("/posts");
   }
 
   return (
