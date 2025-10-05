@@ -6,6 +6,7 @@ export default function HomePage() {
     <>
       <h1>Welcome to my blog</h1>
       <Image
+        className="home-image"
         src={Guineapig}
         alt="A guinea pig on a laptop"
         width={500}

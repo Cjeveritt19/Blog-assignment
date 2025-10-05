@@ -1,0 +1,8 @@
+.link {
+  font-weight: 700;
+  color: var(--link-colour);
+
+  &:hover {
+    background-color: var(--accent-colour);
+  }
+}
