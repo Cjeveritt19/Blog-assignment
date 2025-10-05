@@ -19,3 +19,9 @@
 ## What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
 ## What went really well and what could have gone better?
+
+I achieved all but two requirements which were the delete button and adding the comments to each post. I struggled with figuring out how to add both these components to my page adn the correct code for both of these.
+
+I think if i couldve implemented the delete button and connecting the comments the project would have been so much better. But i think even without them i have made a good project and implemented what i have learnt recently and it feels good to use everything i have been taught.
+
+I did encounter a few bugs with vercel but i had soon realised it was because i didnt add my env file to vercel.
